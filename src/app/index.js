@@ -1,6 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 
+import App from './components/App'
+
 render((
-  <p>This is a paragraph!</p>
+  <App />
 ), document.getElementById('root'));
