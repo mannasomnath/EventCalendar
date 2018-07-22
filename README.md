@@ -3,11 +3,11 @@ This component is for managing events in a calendar
 
 # How to run
 After cloning the repository, open the terminal and go to the folder where the project is located in your system.
-Please run the below command -
+Please run the below command from the terminal -
 
 npm install
 
-Once all the dependencies are downloaded into your system, please run the below command - 
+Once all the dependencies are downloaded into your system, please run the below command from the terminal - 
 
 npm start
 
