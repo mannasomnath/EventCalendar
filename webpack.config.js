@@ -24,7 +24,11 @@ var config = {
             {
                 from: 'src/app/images',
                 to: path.resolve(__dirname, 'dist') + '/app/images'
-            } 
+            },
+            {
+                from: './data.json',
+                to: path.resolve(__dirname, 'dist') + '/data.json'
+            }
         ])
     ],
     module: {

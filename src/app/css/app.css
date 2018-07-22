@@ -67,8 +67,6 @@
   main {
     display: block;
     margin: 0 auto;
-    margin-top: 5em;
-    max-width: 50em;
   }
   
   
@@ -113,6 +111,7 @@
   
   .calendar {
     display: block;
+    clear: both;
     position: relative;
     width: 100%;
     background: var(--neutral-color);
@@ -157,7 +156,7 @@
   
   .calendar .body .cell {
     position: relative;
-    height: 5em;
+    height: 8em;
     border-right: 1px solid var(--border-color);
     overflow: hidden;
     cursor: pointer;
@@ -168,12 +167,6 @@
   .calendar .body .cell:hover {
     background: var(--bg-color);
     transition: 0.5s ease-out;
-  }
-  
-  .calendar .body .selected {
-    border-left: 10px solid transparent;
-    border-image: linear-gradient(45deg, #1a8fff 0%,#53cbf1 40%);
-    border-image-slice: 1;
   }
   
   .calendar .body .row {
@@ -224,4 +217,90 @@
     flex-grow: 0;
     flex-basis: calc(100%/7);
     width: calc(100%/7);
+  }
+
+  .calendar .body .cell .event {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 2px 5px;
+    position: relative;
+    background-color: #3174ad;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 5px;
+    font-size: 12px;
+    z-index: 1;
+  }
+
+  .calendar .body .cell .event:first-child {
+    margin-top: 25px;
+  }
+
+  .calendar .body .cell .more {
+    padding-left: 5px;
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+  }
+
+  .calendar .body .cell .more a {
+    text-decoration: none;
+  }
+
+  .calendar .body .cell .more-events {
+    position: fixed;
+    left: 50%;
+    z-index: 2;
+    width: 200px;
+    top: 50%;
+    overflow: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #FFFFFF;
+    border: 1px solid #e2e2e2;
+    padding-bottom: 10px;
+  }
+
+  .calendar .body .cell .more-events .date-info {
+    color: #aaaaaa;
+    float: left;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .calendar .body .cell .more-events .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .selector-container {
+    float: right;
+    margin-bottom: 0.74em;
+  }
+
+  .selector {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    border: 1px solid #e2e2e2;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .selector a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  .selector.selected {
+    background-color: #3174ad;
+    color: #ffffff;
   }

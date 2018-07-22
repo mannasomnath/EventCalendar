@@ -1,5 +1,6 @@
 import React from 'react'
 import dateFns from 'date-fns'
+import axios from 'axios'
 
 import Header from '../stateless/Header'
 import Days from '../stateless/Days'
@@ -8,7 +9,8 @@ import Cells from '../stateless/Cells'
 class Calendar extends React.Component {
   state = {
     currentMonth: new Date(),
-    selectedDate: new Date()
+    selectedDate: new Date(),
+    eventArray: []    
   };
 
   onDateClick = day => {
@@ -29,6 +31,17 @@ class Calendar extends React.Component {
     });
   };
 
+  componentWillMount = () => {
+    axios.get('data.json').then((response) => {
+      this.setState({
+        eventArray: response.data
+      })
+    }, 
+    (err) => {
+      console.log(err);
+    })
+  }
+
   render() {
     return (
       <div className="calendar">
@@ -41,7 +54,9 @@ class Calendar extends React.Component {
         <Cells 
           currentMonth={this.state.currentMonth}
           selectedDate={this.state.selectedDate}
+          eventArray={this.state.eventArray}
           onDateClick={this.onDateClick}
+          showMoreEvents={this.showMoreEvents}
           />
       </div>
     );

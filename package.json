@@ -12,9 +12,11 @@
   "license": "ISC",
   "homepage": "https://github.com/mannasomnath/EventCalendar#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "date-fns": "^1.29.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
